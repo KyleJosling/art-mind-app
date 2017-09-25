@@ -39,29 +39,3 @@ def uploader_file():
 
 if __name__ == '__main__':
    app.run(debug = True)
-
-
-
-
-# from flask import Flask,jsonify,request,redirect,url_for
-# from werkzeug import secure_filename
-# import flask
-# import cv2
-# import os
-#
-#
-# #Declare app object.
-# app = Flask(__name__)
-#
-#
-# #route app to index page
-# @app.route('/uploader',methods=['POST'])
-# def upload_files():
-#     request.files['image'].save('C:\Users\Kyle\Desktop\FreeTime\App\Engine\images\image.jpg')
-#     resp.status_code = 204
-#
-#     return resp
-#
-#
-# if __name__ == '__main__':
-#     app.run(debug=True)
