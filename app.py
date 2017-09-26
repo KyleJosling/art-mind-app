@@ -3,7 +3,7 @@ from werkzeug import secure_filename
 from getColor import colorz
 import requests
 import json
-
+#ugh
 
 app = Flask(__name__)
 
@@ -27,6 +27,11 @@ def getPallette(filename):
 @app.route('/upload')
 def upload_file():
    return render_template('upload.html')
+
+@app.route('/hello')
+def index():
+   return "YO it works"
+
 
 @app.route('/stuff', methods = ['GET', 'POST'])
 def uploader_file():
