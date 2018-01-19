@@ -4,11 +4,13 @@ from getColor import colorz
 import requests
 import json
 
-
+#App
 app = Flask(__name__)
 
+#Gets the whole colour pallette and returns it
 def getPallette(filename):
 
+    #Get art pallette
     artPallette=colorz(filename)
     data={
 
@@ -16,10 +18,10 @@ def getPallette(filename):
     "input":""
 
     }
-
+    #JSON
     data["input"]=artPallette
     data=json.dumps(data)
-
+    #Get colours from colorminds api
     r=requests.get('http://colormind.io/api/',data=data,timeout=1)
     print r
     return r
