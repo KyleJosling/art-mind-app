@@ -15,7 +15,6 @@ def get_points(img):
     points = []
     w, h = img.size
     for count, color in img.getcolors(w * h):
-        print "count : " + str(count)
         points.append(Point(color, 3, count))
     return points
 
