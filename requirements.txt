@@ -4,3 +4,4 @@ Flask==0.12.2
 Image==1.5.15
 Pillow==4.2.1
 Flask-Cors==3.0.3
+gunicorn==19.7.1
