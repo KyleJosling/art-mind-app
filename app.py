@@ -1,11 +1,12 @@
 from flask import Flask, render_template, request
 from werkzeug import secure_filename
 from getColor import colorz
+from flask_cors import CORS
 import requests
 import json
-#ugh
 
 app = Flask(__name__)
+CORS(app)
 
 def getPallette(filename):
 
