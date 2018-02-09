@@ -20,7 +20,7 @@ def get_points(img):
 
 rtoh = lambda rgb: '#%s' % ''.join(('%02x' % p for p in rgb))
 
-def colorz(filename, n=3):
+def colorz(filename, n=5):
     #open image, resize
     img = Image.open(filename)
     img.thumbnail((200, 200))
