@@ -7,8 +7,8 @@ except ImportError:
     from PIL import Image
 
 #Create two named tuples for a cluster and a point
-Point = namedtuple('Point', ('coords', 'n', 'ct'))
-Cluster = namedtuple('Cluster', ('points', 'center', 'n'))
+Point = namedtuple('Point', ['coords', 'n', 'ct'])
+Cluster = namedtuple('Cluster', ['points', 'center', 'n'])
 
 #Gets all the points in the image and their colour values
 def get_points(img):
@@ -30,7 +30,7 @@ def colorz(filename, n=5):
     points = get_points(img)
     #Get clusters using kmeans function
     clusters = kmeans(points, n, 1)
-    rgbs = [map(int, c.center.coords) for c in clusters]
+    rgbs = [list(map(int, c.center.coords)) for c in clusters]
     return rgbs
 
 #Euclidean distance that we're trying to minimize
@@ -54,7 +54,7 @@ def kmeans(points, k, min_diff):
     #random.sample returns k length list of unique elements from points
     #This generates random clusters of points
     clusters = [Cluster([p], p, p.n) for p in random.sample(points, k)]
-
+    
     #Every point in the dataset is assigned to its nearest centroid
     #If k = 3 , there are three centroids
     while 1:
